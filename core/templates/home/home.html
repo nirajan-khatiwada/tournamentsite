@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+#homecard{
+    display: flex;
+    gap: 20px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+
+}
+
+.card{
+   width: 25vw;
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+.card{
+    width: 100%;
+ 
+ }
+   
+    #homecard{
+        flex-direction: column;
+    }
+    
+}
+</style>
+  <!-- Include additional CSS styles here if needed -->
+{% endblock style %}
+
+{% block content %}
+  <!-- Your content goes here -->
+  <header>
+    <!-- Intro settings -->
+    <style>
+      /* Default height for small devices */
+      #intro-example {
+        height: 400px;
+      }
+
+      /* Height for devices larger than 992px */
+      @media (min-width: 992px) {
+        #intro-example {
+          height: 600px;
+        }
+      }
+    </style>
+
+    <!-- Background image -->
+    <div id="intro-example" class="p-5 text-center bg-image" style="background-image: url('https://static.owayo-cdn.com/newhp/img/magazin/esportstournaments/esports-most-popular-tournaments-worldwide-670px.jpg');background-size: cover">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">HOST YOUR TOURNAMENTS</h1>
+            <h5 class="mb-4">A BEST NEPALI PLATFORM TO HOST TOURNAMENTS</h5>
+            <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="{%url 'login'%}" role="button" >LOGIN</a>
+            <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="{%url 'register'%}" role="button">SIGNUP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <br>
+  <br>
+  <p class="font-monospace text-center">TOURNAMENTS</p>
+  <br>
+  <div id="homecard" >
+    <!-- Your card content goes here -->
+    <!-- Example Card -->
+    <div class="card">
+        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone">
+        <div class="card-body">
+          <h5 class="card-title">PUBG WHOLE NEPAL TOURNAMENTS</h5>
+          <p class="card-text">ORGANIZED BY: antone<br>GAME TIME:1080/10/20<br>MODE:SOLO<br>TEAM REGISTERED:50</p>
+          <a href="#!" class="btn btn-primary" data-mdb-ripple-init>JOIN</a>
+        </div>
+      </div>
+    <div class="card">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone">
+      <div class="card-body">
+        <h5 class="card-title">PUBG WHOLE NEPAL TOURNAMENTS</h5>
+        <p class="card-text">ORGANIZED BY: antone<br>GAME TIME:1080/10/20<br>MODE:SOLO<br>TEAM REGISTERED:50</p>
+        <a href="#!" class="btn btn-primary" data-mdb-ripple-init>JOIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone">
+        <div class="card-body">
+          <h5 class="card-title">PUBG WHOLE NEPAL TOURNAMENTS</h5>
+          <p class="card-text">ORGANIZED BY: antone<br>GAME TIME:1080/10/20<br>MODE:SOLO<br>TEAM REGISTERED:50</p>
+          <a href="#!" class="btn btn-primary" data-mdb-ripple-init>JOIN</a>
+        </div>
+      </div>
+      
+    <!-- End Example Card -->
+  </div>
+{% endblock content %}

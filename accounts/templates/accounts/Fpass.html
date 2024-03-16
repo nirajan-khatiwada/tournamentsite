@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/loginstyle.css'%}">
+{%endblock style%}
+
+{%block content%}
+<div class="flex">
+    <div class="login">
+       <br>
+       <br>
+       <h1>FORGOT PASSWORD</h1>
+       <br>
+       <form method="POST" action="{%url 'forgot'%}" style="width: 22rem;">
+        {% csrf_token %}
+           <!-- Name input -->
+           {%for error in messages%}
+           {{error}}
+           {%endfor%}
+           <div data-mdb-input-init class="form-outline mb-4">
+             {{form.email}}
+             <label class="form-label" for="form5Example1">{{form.email.label_tag}}</label>
+           </div>
+         
+      
+          
+         
+           <!-- Submit button -->
+           <button type="submit" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Send Mail</button>
+           
+
+           <div class="form-check d-flex justify-content-center mb-4">
+               <div class="form-check-label" for="form5Example3">
+                   HAVE A PASSWORD ? <a href="{%url 'login'%}" style="color:blue">LOGIN</a>              </div>
+                               </div>
+          
+         </form>
+    </div>
+     
+     
+</div>
+
+{%endblock content%}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/loginstyle.css'%}">
+{%endblock style%}
+
+{%block content%}
+<div class="flex">
+    <div class="login">
+       <br>
+       <br>
+       <h1>LOGIN FORMS</h1>
+       <br>
+       {%for error in messages%}
+           {{error}}
+           {%endfor%}
+       <form method="POST" action="{%url 'login'%}" style="width: 22rem;">
+
+        {% csrf_token %}
+           <!-- Name input -->
+          
+
+           {%for data in form%}
+           
+           <div data-mdb-input-init class="form-outline mb-4">
+             {{data}}
+             <label class="form-label" for="form5Example1">{{data.label_tag}}</label>
+           </div>
+           {%endfor%}
+         
+          
+         
+          
+         
+           <!-- Submit button -->
+           <button type="submit" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">LOGIN</button>
+           
+
+           
+                                            
+                       
+          
+         </form>
+         <div class="form-check d-flex justify-content-center mb-4">
+          {%if not messages%}
+               <div class="form-check-label" for="form5Example3">
+                   DOESNT HAVE A ACCOUNT ? <a href="{%url 'register'%}" style="color:blue">REGISTER</a>              </div>
+                               </div>
+                              {%endif%}
+                               {%if messages%}
+                               <div class="form-check-label" for="form5Example3">
+                               
+                               FORGOT PASSWORD  ? <a href="{%url 'forgot'%}" style="color:blue">FORGOT</a>              </div>
+                                            </div>
+                                            {%endif%}
+    </div>
+     
+     
+</div>
+
+{%endblock content%}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{%block style%}
+<link rel="stylesheet" href="{%static 'css/loginstyle.css'%}">
+{%endblock style%}
+
+{%block content%}
+<div class="flex">
+    <div class="login">
+       <br>
+       <br>
+       <h1>REGISTER FORMS</h1>
+       <br>
+       <form method="post" action="{%url 'register'%}" style="width: 22rem;">
+
+        {% csrf_token %}
+           <!-- Name input -->
+           {%for error in messages%}
+           {{error}}
+           {%endfor%}
+           <br>
+           <br>
+           {%for label in data%}
+           <div data-mdb-input-init class="form-outline mb-4">
+           
+
+          
+            {{label}}
+              
+               <label class="form-label" for="form5Example1">{{label.label_tag}}</label>
+             </div>
+             {%endfor%}
+
+          
+         
+           <!-- Submit button -->
+           <button type="submit" data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">REGISTER</button>
+           
+
+           <div class="form-check d-flex justify-content-center mb-4">
+               <div class="form-check-label" for="form5Example3">
+                   ALREADY HAVE A ACCOUNT ? <a href="{%url 'login'%}" style="color:blue">LOGIN</a>              </div>
+                               </div>
+          
+         </form>
+    </div>
+     
+     
+</div>
+
+{%endblock content%}
